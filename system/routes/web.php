@@ -1,7 +1,8 @@
-<?php
+ <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProdukController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,69 +18,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', function () {
-    return view('login');
-});
+Route::get('beranda', [HomeController::class, 'showBeranda']);
 
-Route::get('/signup', function () {
-    return view('signup');
-});
+Route::get('produk', [ProdukController::class, 'index']);
 
-Route::get('/index', function () {
-    return view('index');
-});
+Route::get('produk/create', [ProdukController::class, 'create']);
 
-Route::get('/about', function () {
-    return view('about');
-});
+Route::get('kategori', [HomeController::class, 'showKategori']);
 
+Route::get('login', [HomeController::class, 'showLogin']);
 
-Route::get('/shop', function () {
-    return view('shop');
-});
+Route::get('promo', [HomeController::class, 'showPromo']);
 
-
-Route::get('/galery', function () {
-    return view('gallery');
-});
-
-Route::get('/detail', function () {
-    return view('shop-detail');
-});
-
-
-
-Route::get('/contact', function () {
-    return view('contact-us');
-});
-
-
-
-
-
-
-
-
-Route::get('/template', function () {
-    return view('template.base');
-});
-
-Route::get('/beranda', function () {
-    return view('beranda');
-});
-
-Route::get('/produk', function () {
-    return view('produk');
-});
-
-Route::get('/kategori', function () {
-    return view('kategori');
-});
-
-
-Route::get('/promo', function () {
-    return view('promo');
-});
-
+Route::get('template.base', [HomeController::class, 'showTemplate']);
 
 
