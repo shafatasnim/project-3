@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Produk;
 
 
-class ProdukController extends Controller{
+class ClientProdukController extends Controller{
 	function index(){
 		$data['list_produk'] = Produk::all();
 		return view('produk.index', $data);

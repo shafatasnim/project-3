@@ -26,7 +26,13 @@
 
       <div class="content">
         <div class="container-fluid">
-
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                @include('template.utils.notif')
+              </div>
+            </div>
+          </div>
           @yield('content')
           
         </div>
