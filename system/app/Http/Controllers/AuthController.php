@@ -9,11 +9,11 @@ class AuthController extends Controller
 	}
 
 	function processLogin(){
-		
+		return view('processlogin');
 	}
 
 	function logout(){
-		
+		return view('logout');
 	}
 
 	function registration(){
@@ -21,7 +21,7 @@ class AuthController extends Controller
 	}
 
 	function forgotPassword(){
-		
+		return view('forgotPassword');
 	}
 }
 

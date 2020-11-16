@@ -25,8 +25,8 @@
 								<td>{{$loop->iteration}}</td>
 								<td>
 									<div class="btn-group">
-										<a href="{{url('produk', $produk->id)}}" class="btn btn-primary"><i class="fa fa-info"></i></a>
-										<a href="{{url('produk', $produk->id)}}/edit" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+										<a href="{{url('produk', $produk->id)}}" class="btn btn-primary" style="display: flex; align-items: center;"><i class="fa fa-info"></i></a>
+										<a href="{{url('produk', $produk->id)}}/edit" class="btn btn-warning" style="display: flex; align-items: center;"><i class="fa fa-edit"></i></a>
 										@include('template.utils.delete', ['url' => url('produk', $produk->id)]) 
 									</div>
 								</td>

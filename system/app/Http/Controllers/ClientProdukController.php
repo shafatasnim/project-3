@@ -2,51 +2,33 @@
 
 namespace App\Http\Controllers;
 use App\Models\Produk;
+use App\Models\Kategori;
 
 
 class ClientProdukController extends Controller{
+
+
+	function homeindex(){
+		return view('clientproduk.template');
+	}
+
 	function index(){
-		$data['list_produk'] = Produk::all();
-		return view('produk.index', $data);
+		$datakategori['list_kategori'] = Kategori::all();
+		$dataproduk['list_produk'] = Produk::all();
+		return view('clientproduk.index', $datakategori, $dataproduk);
 	}
 
-	function create(){
-		return view('produk.create');
+	function show(Produk $detail){
+		$dataa['produk'] = $detail;
+		return view('clientproduk.detail', $dataa);
 	}
 
-	function store(){
-		$produk = new produk;
-		$produk->nama = request('nama');
-		$produk->stock = request('stock');
-		$produk->harga = request('harga');
-		$produk->berat = request('berat');
-		$produk->deskripsi = request('deskripsi');
-		$produk->save();
-
-		return redirect('produk')->with('success', 'Data Berhasil Ditambahkan');
+	function Kategori(){
+		$datakategori['list_kategori'] = Kategori::all();
+		return view('clientproduk.Kategori', $datakategori);
+	}
+	function about(){
+		return view('about');
 	}
 
-	function show(Produk $produk){
-		$data['produk'] = $produk;
-		return view('produk.show', $data);
-	}
-	function edit(Produk $produk){
-		$data['produk'] = $produk;
-		return view('produk.edit', $data);
-	}
-	function update(Produk $produk){
-		$produk->nama = request('nama');
-		$produk->stock = request('stock');
-		$produk->harga = request('harga');
-		$produk->berat = request('berat');
-		$produk->deskripsi = request('deskripsi');
-		$produk->save();
-
-		return redirect('produk')->with('success', 'Data Berhasil Diedit');
-	}
-	function destroy(Produk $produk){
-		$produk->delete();
-
-		return redirect('produk')->with('success', 'Data Berhasil Dihapus');
-	}
 }

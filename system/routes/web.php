@@ -5,7 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\ClientProdukController;
-use App\Http\Controllers\AdminProdukController;
+use App\Http\Controllers\KategoriController;
 
 
 /*
@@ -22,6 +22,8 @@ use App\Http\Controllers\AdminProdukController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
 //AuthController//
 Route::get('login', [AuthController::class, 'showLogin']);
 Route::get('registration', [AuthController::class, 'registration']);
@@ -41,5 +43,22 @@ Route::get('produk/{produk}/edit', [ProdukController::class, 'edit']);
 Route::put('produk/{produk}', [ProdukController::class, 'update']);
 Route::delete('produk/{produk}', [ProdukController::class, 'destroy']);
 
+//kategoricontroller//
+Route::get('kategori', [KategoriController::class, 'index']);
+Route::get('kategori/create', [KategoriController::class, 'create']);
+Route::post('kategori', [KategoriController::class, 'store']);
+Route::get('kategori/{kategori}', [KategoriController::class, 'show']);
+Route::get('kategori/{kategori}/edit', [KategoriController::class, 'edit']);
+Route::put('kategori/{kategori}', [KategoriController::class, 'update']);
+Route::delete('kategori/{kategori}', [KategoriController::class, 'destroy']);
+
+
 //clientprodukcontrollerr//
-Route::get('template', [ClientProdukController::class, 'index']);
+
+Route::get('home', [ClientProdukController::class, 'homeindex']);
+Route::get('clientproduk', [ClientProdukController::class, 'index']);
+Route::get('detail/{detail}', [ClientProdukController::class, 'show']);
+
+//kategori//
+Route::get('clientkategori', [ClientProdukController::class, 'kategori']);
+Route::get('about', [ClientProdukController::class, 'about']);
