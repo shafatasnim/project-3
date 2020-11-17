@@ -40,9 +40,9 @@
             </a>
           </li>
           <li class="nav-item {{checkRouteActive('promo')}}">
-            <a class="nav-link" href="{{url('promo')}}">
+            <a class="nav-link" href="{{url('user')}}">
               <i class="material-icons"></i>
-              <p class="text-white">Promo</p>
+              <p class="text-white">User</p>
             </a>
           </li>
           <!-- your sidebar here -->

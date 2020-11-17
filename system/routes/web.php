@@ -6,7 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\ClientProdukController;
 use App\Http\Controllers\KategoriController;
-
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +26,7 @@ Route::get('/', function () {
 
 //AuthController//
 Route::get('login', [AuthController::class, 'showLogin']);
+Route::post('login', [AuthController::class, 'loginProcess']);
 Route::get('registration', [AuthController::class, 'registration']);
 
 //homecontroller//
@@ -62,3 +63,12 @@ Route::get('detail/{detail}', [ClientProdukController::class, 'show']);
 //kategori//
 Route::get('clientkategori', [ClientProdukController::class, 'kategori']);
 Route::get('about', [ClientProdukController::class, 'about']);
+
+//User//
+Route::get('user', [UserController::class, 'index']);
+Route::get('user/create', [UserController::class, 'create']);
+Route::post('user', [UserController::class, 'store']);
+Route::get('user/{user}', [UserController::class, 'show']);
+Route::get('user/{user}/edit', [UserController::class, 'edit']);
+Route::put('user/{user}', [UserController::class, 'update']);
+Route::delete('user/{user}', [UserController::class, 'destroy']);

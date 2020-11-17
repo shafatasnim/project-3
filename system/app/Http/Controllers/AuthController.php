@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Auth;
 
 class AuthController extends Controller
 {
@@ -8,8 +9,13 @@ class AuthController extends Controller
 		return view('login');
 	}
 
-	function processLogin(){
-		return view('processlogin');
+	function loginProcess(){
+		return view('login');
+		if(Auth::attempt(['email' => request('email'), 'password' =>request('password')])){
+			return redirect('beranda')->with('success', 'Login Berhasil');
+		}else{
+			return back()->with('warning', 'Login Gagal, Silahkan cek email dan password anda');
+		}
 	}
 
 	function logout(){
