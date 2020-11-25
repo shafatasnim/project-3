@@ -9,6 +9,7 @@
 <body id="bg-login">
 	<div class="log-1">
 		<h2>Masuk</h2><hr>
+			@include('template.utils.notif')
 			<form action="{{url('login')}}" method="POST">
 				@csrf
 				<label>E-mail</label>
@@ -16,10 +17,7 @@
 				<label>Password</label>
 				<input type="password" name="password" placeholder="Password" class="input-control">
 				<div class="tombol">
-					<button>
-						<input type="submit" value="login">
-					</button>
-					@include('template.utils.notif')
+					<button class="btn"><a href="{{url('beranda')}}">Login</a></button>
 				</div>
 				<div class="sign">
 				Belum Punya akun? <a href="{{url('signup')}}">Daftar</a>

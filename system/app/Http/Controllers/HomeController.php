@@ -21,8 +21,8 @@ class HomeController extends Controller{
 		return view('login');
 	}
 
-	function showPromo(){
-		return view('promo');
+	function test($produk){
+		echo "Nama Produk $produk";
 	}
 
 }

@@ -16,7 +16,11 @@
           <img src="{{url('public')}}/assets/img/new_logo.png" style="border-radius: 50%;border:5px solid #9900cc;">
         </a>
         <a href="http://www.creative-tim.com" class="simple-text text-white logo-normal">
-          Shafa Tasnim Narulita
+         @if(Auth::check())
+          {{request()->user()->nama}}
+         @else
+            Silahkan Login
+         @endif
         </a>
       </div>
       <div class="sidebar-wrapper bg-dark">

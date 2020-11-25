@@ -1,7 +1,12 @@
 <nav class="navbar navbar-expand-lg bg-light navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="btn btn-primary" href="{{url('beranda')}}">Dashboard</a>
+            <a class="btn btn-primary" href="{{url('beranda')}}"> 
+              @if(Auth::check())
+                {{request()->user()->nama}}
+               @else
+                Silahkan Login
+               @endif</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -19,7 +24,7 @@
                 </a>
               </li>
                <li class="nav-item">
-                <a class="nav-link" href="{{url('login')}}">
+                <a class="nav-link" href="{{url('logout')}}">
                   <i class="material-icons">https</i> Log out
                 </a>
               </li>

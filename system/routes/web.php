@@ -27,13 +27,14 @@ Route::get('/', function () {
 //AuthController//
 Route::get('login', [AuthController::class, 'showLogin']);
 Route::post('login', [AuthController::class, 'loginProcess']);
-Route::get('registration', [AuthController::class, 'registration']);
+Route::get('logout', [AuthController::class, 'logout']);
 
 //homecontroller//
 Route::get('beranda', [HomeController::class, 'showBeranda']);
 Route::get('kategori', [HomeController::class, 'showKategori']);
 Route::get('login', [HomeController::class, 'showLogin']);
 Route::get('promo', [HomeController::class, 'showPromo']);
+Route::get('test/{produk}', [HomeController::class, 'test']);
 
 //produkcontroller//
 Route::get('produk', [ProdukController::class, 'index']);
@@ -43,6 +44,7 @@ Route::get('produk/{produk}', [ProdukController::class, 'show']);
 Route::get('produk/{produk}/edit', [ProdukController::class, 'edit']);
 Route::put('produk/{produk}', [ProdukController::class, 'update']);
 Route::delete('produk/{produk}', [ProdukController::class, 'destroy']);
+Route::post('produk/filter', [ProdukController::class, 'filter']);
 
 //kategoricontroller//
 Route::get('kategori', [KategoriController::class, 'index']);

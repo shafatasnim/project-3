@@ -7,6 +7,19 @@
 		<div class="col-md-12 mt-3">
 			<div class="card">
 				<div class="card-header">
+					Filter
+				</div>
+				<div class="card-body">
+					<form action="project-3/produk/filter" method="post">
+						<div class="form-group">
+							<input type="text" class="form-control" name="nama" placeholder="Nama Produk" value="{{$nama ?? ""}}">
+						</div>
+						<button class="btn btn-sm float-right btn-primary"><i class="fa fa-search"></i> Filter</button>
+					</form>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header">
 					Data Produk
 					<a href="{{url('produk/create')}}" class="btn btn-primary float-right"><i class="fa fa-plus"></i> Tambah Data</a>
 				</div>

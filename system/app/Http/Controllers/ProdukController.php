@@ -49,4 +49,10 @@ class ProdukController extends Controller{
 
 		return redirect('produk')->with('success', 'Data Berhasil Dihapus');
 	}
+
+	function filter(){
+		$data['list_produk'] = Produk::all();
+		$data['nama'] = request('nama');
+		return view('project-3.produk.index', $data);
+	}
 }

@@ -27,7 +27,7 @@
 						</div>
 						<div class="form-group">
 							<label for="" class="control-label">Password</label>
-							<input type="password" class="form-control" name="password">
+							<input type="password" class="form-control" name="password" id="stock">
 						</div>
 						
 						<button class="btn btn-primary float-right"><i class="fa fa-save"></i> Simpan</button>

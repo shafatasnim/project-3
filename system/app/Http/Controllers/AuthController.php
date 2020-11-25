@@ -10,16 +10,16 @@ class AuthController extends Controller
 	}
 
 	function loginProcess(){
-		return view('login');
-		if(Auth::attempt(['email' => request('email'), 'password' =>request('password')])){
+		if(Auth::attempt(['email' => request('email'), 'password' => request('password')])){
 			return redirect('beranda')->with('success', 'Login Berhasil');
 		}else{
-			return back()->with('warning', 'Login Gagal, Silahkan cek email dan password anda');
+			return back()->with('success', 'Login Gagal, Silahkan cek email dan password anda');
 		}
 	}
 
 	function logout(){
-		return view('logout');
+		Auth::logout();
+		return redirect('beranda');
 	}
 
 	function registration(){
